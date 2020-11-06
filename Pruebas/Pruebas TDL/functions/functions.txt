@@ -1,0 +1,26 @@
+var bool kk;
+var int global;
+var int resultado;
+var string salto;
+
+salto = '\n';
+
+kk = 8 == 4+4;
+global = 100;
+
+function int suma (int a, int b){
+	var int resultado;
+	resultado = a + global + b;
+	print(resultado);
+	print(salto);
+	if (kk) 
+		resultado=50;
+	return resultado;
+}
+
+resultado = suma(15, 10);
+print(resultado);
+print(salto);
+
+resultado = resultado * 2 *global / 2;
+print(resultado);

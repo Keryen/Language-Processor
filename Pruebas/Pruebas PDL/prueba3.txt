@@ -1,0 +1,18 @@
+var bool a;
+var bool b;
+a = true;
+b= false;
+
+function bool comprobacion (){
+	if(a || b)	
+		return true;
+}
+
+var bool c;
+
+function bool comprobacion2 (){
+
+if (     a || c)
+	return c;
+	
+	}

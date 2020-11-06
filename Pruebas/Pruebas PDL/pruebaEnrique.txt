@@ -1,0 +1,12 @@
+var string a; 
+a = 'Tu puta madre';
+
+function string drogaporro(int a){
+
+	a = 1+2+1+12+3+3+31+413+134;
+	
+	return 'hola';
+}
+
+
+	raro = 2;

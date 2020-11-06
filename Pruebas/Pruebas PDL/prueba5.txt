@@ -1,0 +1,19 @@
+var string a1;
+a1 = 'cadena de prueba';
+var string a2;
+a2 = 'segunda cadena de prueba';
+
+		/* no 	deberia guardar 
+		nada de 
+		estas lineas
+a1=1;
+
+		*/
+function string intercambio +/* (string b1, string b2){
+	var string aux;
+	aux = b1;
+	b1 = b2;
+	b2 = aux;
+}
+
+intercambio(a1,a2);

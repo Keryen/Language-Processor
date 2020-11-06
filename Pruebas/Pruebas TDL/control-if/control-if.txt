@@ -1,0 +1,21 @@
+var string s;
+var bool booleano;
+var int i;
+
+booleano = false;
+s = 'no se ha ejecutado';
+
+if (i == 0)
+    s = 'Esto se ejecutaria';
+    
+print(s);
+print('\n');
+
+booleano |= i == 10 + 2;
+
+print (booleano);
+print('\n');
+
+booleano |= i == 0;
+
+print (booleano);

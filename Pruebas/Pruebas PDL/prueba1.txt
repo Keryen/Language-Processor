@@ -1,0 +1,34 @@
+var string ejemplo;
+var int a;
+var int b;
+ejemplo = 'hola';
+
+a=1;
+b=2;
+
+if(a==b)
+a=1;
+
+a = 2;
+
+function int imprime(int a,int b,int c){
+	var bool ejemplo;
+	ejemplo = 8 == 8+3;
+	return a;
+}
+function int suma(int a, int b, int c){
+	var bool t;
+	do{
+	a = 1 +2;
+	} while(t);
+	
+	b = imprime(a,b+8,suma(8,a,c));
+	a = suma(1,a,b+c);
+	return a+b+c;
+}
+
+var string pr;
+
+print(pr);
+
+a = suma(1,2,3);

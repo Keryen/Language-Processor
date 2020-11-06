@@ -1,0 +1,8 @@
+var bool kk;
+var int resultado;
+
+kk = (8 == 8);
+
+function suma (int a){
+	kk = false;
+}

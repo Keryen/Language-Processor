@@ -1,0 +1,23 @@
+var bool cond_1;
+var bool cond_2;
+var int i;
+
+cond_1 = false;
+cond_2 = false;
+
+function int suma (int a){
+	return a + 10;
+}
+
+if (cond_1 || cond_2)
+	i = suma(10);
+
+print (i);
+print('\n');
+
+cond_1 = true;
+
+if (cond_1 || cond_2)
+	i = suma(10);
+
+print (i);

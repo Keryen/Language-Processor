@@ -1,0 +1,11 @@
+function int factorial ( int n ) {
+	var int res;
+	if(return || n == 0)
+		return n_2;
+	do{
+		res = n*(n+1);
+		n = n+2;
+	} while(n == 1)
+	
+	return n;
+}

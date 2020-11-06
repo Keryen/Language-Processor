@@ -1,0 +1,28 @@
+var int a;
+var int b;
+
+a = 10;
+b = 1;
+
+function prueba(int i){
+	print(i);
+	return;
+}
+function fun() {
+    var int i;
+    i = a*b;
+    b = a/i;
+    prueba(b);
+    return;
+}
+
+function prueba2(){
+	prueba(2);
+	fun();
+}
+
+fun();
+
+print(a);
+print('\n');
+print(b);

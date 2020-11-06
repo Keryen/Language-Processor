@@ -1,0 +1,100 @@
+		 MOVE #inicio_pila, .IY
+		 ADD .IY, #140
+		 MOVE .A, .IX
+
+		 ; Comienzo del codigo:
+		 ; Asignacion:
+		 MOVE #0, #3[.IY]
+		 ; Asignacion:
+		 MOVE #3[.IY], #0[.IY]
+		 ; Asignacion:
+		 MOVE #0, #4[.IY]
+		 ; Asignacion:
+		 MOVE #4[.IY], #1[.IY]
+		 BR /et_suma_final
+
+et_suma:
+		 ; Asignacion:
+		 MOVE #10, #1[.IX]
+		 ; Operacion ADD:
+		 ADD #0[.IX], #1[.IX]
+		 MOVE .A,  #2[.IX]
+		 ; Return:
+		 ADD #3, .IX
+		 MOVE #2[.IX], [.A]
+		 SUB .IX, #1
+		 BR [.A]
+
+et_suma_final:
+		 ; Operacion OR:
+		 OR #0[.IY], #1[.IY]
+		 MOVE .A,  #5[.IY]
+		 ; If:
+		 CMP #5[.IY], #0
+		 BZ /Et0
+		 ; Asignacion:
+		 MOVE #10, #7[.IY]
+		 ; Param:
+		 MOVE #7[.IY], #1[.IX]
+		 ; Call:
+		 MOVE #dir_ret_1, [.IX]
+		 ADD .IX, #1
+		 MOVE .A, .IX
+		 BR /et_suma
+
+dir_ret_1:
+		 SUB .IX, #1
+		 MOVE .A, .IX
+		 SUB #5, #1
+		 ADD .A, .IX
+		 MOVE [.A], #6[.IY]
+		 ; Asignacion:
+		 MOVE #6[.IY], #2[.IY]
+
+Et0:
+		 ; Print:
+		 WRINT #2[.IY]
+		 ; Asignacion:
+		 MOVE #Cadena_0, #8[.IY]
+		 ; Print:
+		 MOVE #8[.IY], .R9
+		 WRSTR [.R9]
+		 ; Asignacion:
+		 MOVE #1, #9[.IY]
+		 ; Asignacion:
+		 MOVE #9[.IY], #0[.IY]
+		 ; Operacion OR:
+		 OR #0[.IY], #1[.IY]
+		 MOVE .A,  #10[.IY]
+		 ; If:
+		 CMP #10[.IY], #0
+		 BZ /Et1
+		 ; Asignacion:
+		 MOVE #10, #12[.IY]
+		 ; Param:
+		 MOVE #12[.IY], #1[.IX]
+		 ; Call:
+		 MOVE #dir_ret_2, [.IX]
+		 ADD .IX, #1
+		 MOVE .A, .IX
+		 BR /et_suma
+
+dir_ret_2:
+		 SUB .IX, #1
+		 MOVE .A, .IX
+		 SUB #5, #1
+		 ADD .A, .IX
+		 MOVE [.A], #11[.IY]
+		 ; Asignacion:
+		 MOVE #11[.IY], #2[.IY]
+
+Et1:
+		 ; Print:
+		 WRINT #2[.IY]
+		 HALT
+
+; Cadenas:
+Cadena_0: DATA "\n"
+
+inicio_pila: NOP
+

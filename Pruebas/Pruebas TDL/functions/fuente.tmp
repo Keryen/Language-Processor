@@ -1,0 +1,124 @@
+		 MOVE #inicio_pila, .IY
+		 ADD .IY, #273
+		 MOVE .A, .IX
+
+		 ; Comienzo del codigo:
+		 ; Asignacion:
+		 MOVE #Cadena_0, #4[.IY]
+		 ; Asignacion:
+		 MOVE #4[.IY], #3[.IY]
+		 ; Asignacion:
+		 MOVE #8, #5[.IY]
+		 ; Asignacion:
+		 MOVE #4, #6[.IY]
+		 ; Asignacion:
+		 MOVE #4, #7[.IY]
+		 ; Operacion ADD:
+		 ADD #6[.IY], #7[.IY]
+		 MOVE .A,  #8[.IY]
+		 ; If:
+		 CMP #5[.IY], #8[.IY]
+		 BZ /Et0
+		 ; GoTo:
+		 BR /Et1
+
+Et0:
+		 ; Asignacion:
+		 MOVE #1, #9[.IY]
+		 ; GoTo:
+		 BR /Et2
+
+Et1:
+		 ; Asignacion:
+		 MOVE #0, #9[.IY]
+
+Et2:
+		 ; Asignacion:
+		 MOVE #9[.IY], #0[.IY]
+		 ; Asignacion:
+		 MOVE #100, #10[.IY]
+		 ; Asignacion:
+		 MOVE #10[.IY], #1[.IY]
+		 BR /et_suma_final
+
+et_suma:
+		 ; Operacion ADD:
+		 ADD #0[.IX], #1[.IY]
+		 MOVE .A,  #3[.IX]
+		 ; Operacion ADD:
+		 ADD #3[.IX], #1[.IX]
+		 MOVE .A,  #4[.IX]
+		 ; Asignacion:
+		 MOVE #4[.IX], #2[.IX]
+		 ; Print:
+		 WRINT #2[.IX]
+		 ; Print:
+		 MOVE #3[.IY], .R9
+		 WRSTR [.R9]
+		 ; If:
+		 CMP #0[.IY], #0
+		 BZ /Et3
+		 ; Asignacion:
+		 MOVE #50, #5[.IX]
+		 ; Asignacion:
+		 MOVE #5[.IX], #2[.IX]
+
+Et3:
+		 ; Return:
+		 ADD #6, .IX
+		 MOVE #2[.IX], [.A]
+		 SUB .IX, #1
+		 BR [.A]
+
+et_suma_final:
+		 ; Asignacion:
+		 MOVE #15, #12[.IY]
+		 ; Asignacion:
+		 MOVE #10, #13[.IY]
+		 ; Param:
+		 MOVE #12[.IY], #1[.IX]
+		 ; Param:
+		 MOVE #13[.IY], #2[.IX]
+		 ; Call:
+		 MOVE #dir_ret_1, [.IX]
+		 ADD .IX, #1
+		 MOVE .A, .IX
+		 BR /et_suma
+
+dir_ret_1:
+		 SUB .IX, #1
+		 MOVE .A, .IX
+		 SUB #8, #1
+		 ADD .A, .IX
+		 MOVE [.A], #11[.IY]
+		 ; Asignacion:
+		 MOVE #11[.IY], #2[.IY]
+		 ; Print:
+		 WRINT #2[.IY]
+		 ; Print:
+		 MOVE #3[.IY], .R9
+		 WRSTR [.R9]
+		 ; Asignacion:
+		 MOVE #2, #14[.IY]
+		 ; Operacion MUL:
+		 MUL #2[.IY], #14[.IY]
+		 MOVE .A,  #15[.IY]
+		 ; Operacion MUL:
+		 MUL #15[.IY], #1[.IY]
+		 MOVE .A,  #16[.IY]
+		 ; Asignacion:
+		 MOVE #2, #17[.IY]
+		 ; Operacion DIV:
+		 DIV #16[.IY], #17[.IY]
+		 MOVE .A,  #18[.IY]
+		 ; Asignacion:
+		 MOVE #18[.IY], #2[.IY]
+		 ; Print:
+		 WRINT #2[.IY]
+		 HALT
+
+; Cadenas:
+Cadena_0: DATA "\n"
+
+inicio_pila: NOP
+

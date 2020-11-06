@@ -1,0 +1,117 @@
+		 MOVE #inicio_pila, .IY
+		 ADD .IY, #651
+		 MOVE .A, .IX
+
+		 ; Comienzo del codigo:
+		 ; Asignacion:
+		 MOVE #0, #3[.IY]
+		 ; Asignacion:
+		 MOVE #3[.IY], #1[.IY]
+		 ; Asignacion:
+		 MOVE #Cadena_0, #4[.IY]
+		 ; Asignacion:
+		 MOVE #4[.IY], #0[.IY]
+		 ; Asignacion:
+		 MOVE #0, #5[.IY]
+		 ; If:
+		 CMP #2[.IY], #5[.IY]
+		 BZ /Et0
+		 ; GoTo:
+		 BR /Et1
+
+Et0:
+		 ; Asignacion:
+		 MOVE #1, #6[.IY]
+		 ; GoTo:
+		 BR /Et2
+
+Et1:
+		 ; Asignacion:
+		 MOVE #0, #6[.IY]
+
+Et2:
+		 ; If:
+		 CMP #6[.IY], #0
+		 BZ /Et3
+		 ; Asignacion:
+		 MOVE #Cadena_1, #7[.IY]
+		 ; Asignacion:
+		 MOVE #7[.IY], #0[.IY]
+
+Et3:
+		 ; Print:
+		 MOVE #0[.IY], .R9
+		 WRSTR [.R9]
+		 ; Asignacion:
+		 MOVE #Cadena_2, #8[.IY]
+		 ; Print:
+		 MOVE #8[.IY], .R9
+		 WRSTR [.R9]
+		 ; Asignacion:
+		 MOVE #10, #9[.IY]
+		 ; Asignacion:
+		 MOVE #2, #10[.IY]
+		 ; Operacion ADD:
+		 ADD #9[.IY], #10[.IY]
+		 MOVE .A,  #11[.IY]
+		 ; If:
+		 CMP #2[.IY], #11[.IY]
+		 BZ /Et4
+		 ; GoTo:
+		 BR /Et5
+
+Et4:
+		 ; Asignacion:
+		 MOVE #1, #12[.IY]
+		 ; GoTo:
+		 BR /Et6
+
+Et5:
+		 ; Asignacion:
+		 MOVE #0, #12[.IY]
+
+Et6:
+		 ; Operacion OR:
+		 OR #1[.IY], #12[.IY]
+		 MOVE .A,  #1[.IY]
+		 ; Print:
+		 WRINT #1[.IY]
+		 ; Asignacion:
+		 MOVE #Cadena_2, #13[.IY]
+		 ; Print:
+		 MOVE #13[.IY], .R9
+		 WRSTR [.R9]
+		 ; Asignacion:
+		 MOVE #0, #14[.IY]
+		 ; If:
+		 CMP #2[.IY], #14[.IY]
+		 BZ /Et7
+		 ; GoTo:
+		 BR /Et8
+
+Et7:
+		 ; Asignacion:
+		 MOVE #1, #15[.IY]
+		 ; GoTo:
+		 BR /Et9
+
+Et8:
+		 ; Asignacion:
+		 MOVE #0, #15[.IY]
+
+Et9:
+		 ; Operacion OR:
+		 OR #1[.IY], #15[.IY]
+		 MOVE .A,  #1[.IY]
+		 ; Print:
+		 WRINT #1[.IY]
+		 HALT
+
+; Cadenas:
+Cadena_0: DATA "no se ha ejecutado"
+Cadena_1: DATA "Esto se ejecutaria"
+Cadena_2: DATA "\n"
+Cadena_3: DATA "\n"
+
+inicio_pila: NOP
+

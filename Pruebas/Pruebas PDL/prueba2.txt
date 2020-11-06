@@ -1,0 +1,16 @@
+var int a;
+var int b;
+a = 5; 
+b = 10;
+c = a + b;
+
+function int suma(int a, int b, int c){
+
+	return a+b+c;
+}
+
+var string pr;
+
+print(pr);
+
+a = suma(1,2,3);

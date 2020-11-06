@@ -1,0 +1,13 @@
+var string a1;
+var string a2;
+a1 = 'cadena de prueba';
+
+/*comentario a parte*/
+
+function concatenar /* hola (string a, string b){
+	var int aux;
+	aux = a;
+	a = b;
+}
+
+print(a);

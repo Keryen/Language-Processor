@@ -1,0 +1,13 @@
+var bool abcd;
+abcd= true;
+var bool dcba;
+dcba = false;
+function bool comprobaciones (int a, int b){
+	var bool res;	
+	if(a == b || a == b)	
+		res = abcd;	
+	
+	if(a == b || b == a)
+	 res =  da;
+		return "Hola";
+}

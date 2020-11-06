@@ -1,0 +1,79 @@
+		 MOVE #inicio_pila, .IY
+		 ADD .IY, #393
+		 MOVE .A, .IX
+
+		 ; Comienzo del codigo:
+		 ; Asignacion:
+		 MOVE #1, #2[.IY]
+		 ; Asignacion:
+		 MOVE #2[.IY], #1[.IY]
+		 ; Asignacion:
+		 MOVE #0, #3[.IY]
+		 ; Asignacion:
+		 MOVE #3[.IY], #0[.IY]
+
+Et0:
+		 ; Asignacion:
+		 MOVE #Cadena_0, #4[.IY]
+		 ; Print:
+		 MOVE #4[.IY], .R9
+		 WRSTR [.R9]
+		 ; Print:
+		 WRINT #0[.IY]
+		 ; Asignacion:
+		 MOVE #Cadena_1, #5[.IY]
+		 ; Print:
+		 MOVE #5[.IY], .R9
+		 WRSTR [.R9]
+		 ; Asignacion:
+		 MOVE #Cadena_2, #6[.IY]
+		 ; Print:
+		 MOVE #6[.IY], .R9
+		 WRSTR [.R9]
+		 ; Asignacion:
+		 MOVE #2, #7[.IY]
+		 ; Operacion ADD:
+		 ADD #0[.IY], #7[.IY]
+		 MOVE .A,  #8[.IY]
+		 ; Asignacion:
+		 MOVE #8[.IY], #0[.IY]
+		 ; Asignacion:
+		 MOVE #10, #9[.IY]
+		 ; If:
+		 CMP #0[.IY], #9[.IY]
+		 BZ /Et1
+		 ; GoTo:
+		 BR /Et2
+
+Et1:
+		 ; Asignacion:
+		 MOVE #1, #10[.IY]
+		 ; GoTo:
+		 BR /Et3
+
+Et2:
+		 ; Asignacion:
+		 MOVE #0, #10[.IY]
+
+Et3:
+		 ; If:
+		 CMP #10[.IY], #0
+		 BZ /Et4
+		 ; Asignacion:
+		 MOVE #0, #11[.IY]
+		 ; Asignacion:
+		 MOVE #11[.IY], #1[.IY]
+
+Et4:
+		 ; If:
+		 CMP #1[.IY], #1
+		 BZ /Et0
+		 HALT
+
+; Cadenas:
+Cadena_0: DATA "Distancia Recorrida: "
+Cadena_1: DATA "cm"
+Cadena_2: DATA "\n"
+
+inicio_pila: NOP
+

@@ -1,0 +1,18 @@
+var int i;
+var bool noTerminado;
+
+noTerminado=true;
+i = 0;
+
+
+do{
+    print('Distancia Recorrida: ');
+    print(i);
+    print('cm');
+    print('\n');
+    i = i + 2;
+    
+    if(i == 10)
+    	noTerminado=false;
+}
+while (noTerminado);

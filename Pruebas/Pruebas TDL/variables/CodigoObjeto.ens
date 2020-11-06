@@ -1,0 +1,55 @@
+		 MOVE #inicio_pila, .IY
+		 ADD .IY, #133
+		 MOVE .A, .IX
+
+		 ; Comienzo del codigo:
+		 ; Asignacion:
+		 MOVE #10, #2[.IY]
+		 ; Asignacion:
+		 MOVE #2[.IY], #0[.IY]
+		 ; Asignacion:
+		 MOVE #1, #3[.IY]
+		 ; Asignacion:
+		 MOVE #3[.IY], #1[.IY]
+		 BR /et_fun_final
+
+et_fun:
+		 ; Operacion MUL:
+		 MUL #0[.IY], #1[.IY]
+		 MOVE .A,  #1[.IX]
+		 ; Asignacion:
+		 MOVE #1[.IX], #0[.IX]
+		 ; Operacion DIV:
+		 DIV #0[.IY], #0[.IX]
+		 MOVE .A,  #2[.IX]
+		 ; Asignacion:
+		 MOVE #2[.IX], #1[.IY]
+		 ; Return:
+		 SUB .IX, #1
+		 BR [.A]
+
+et_fun_final:
+		 ; Call:
+		 MOVE #dir_ret_1, [.IX]
+		 ADD .IX, #1
+		 MOVE .A, .IX
+		 BR /et_fun
+
+dir_ret_1:
+		 SUB .IX, #1
+		 MOVE .A, .IX
+		 ; Print:
+		 WRINT #0[.IY]
+		 ; Asignacion:
+		 MOVE #Cadena_0, #4[.IY]
+		 ; Print:
+		 MOVE #4[.IY], .R9
+		 WRSTR [.R9]
+		 ; Print:
+		 WRINT #1[.IY]
+		 HALT
+
+; Cadenas:
+Cadena_0: DATA "\n"
+
+inicio_pila: NOP

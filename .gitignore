@@ -1,0 +1,15 @@
+.project
+.classpath
+.metadata
+.settings
+/bin
+.class
+
+/Pruebas/*
+!/Pruebas/Pruebas PDL
+!/Pruebas/Pruebas PDL/*
+!/Pruebas/Pruebas TDL
+!/Pruebas/Pruebas TDL/*
+!/Pruebas/Codigo Objeto
+
+/Pruebas/Codigo Objeto/*
